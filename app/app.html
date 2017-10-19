@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>chart2gif</title>
+  <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
+
+
+  <!-- // gif.js 0.1.6 - https://github.com/jnordberg/gif.js --> 
+  <script src="js/gif.js"></script>
+
+  <!-- // gif.worker.js 0.1.6 - https://github.com/jnordberg/gif.js -->
+  <script src="js/gif.worker.js"></script>
+  
+  <!-- http://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js -->
+  <!-- <script src="js/queue.js"></script> -->
+
+
+  <!-- this style block gets appended to the SVG directly (so the gif creation picks it up) -->
+  <style id="chart-style">
+/*    rect {
+      stroke: none;
+      fill: #fff;
+    }
+
+    line,
+    path {
+      fill: none;
+    }
+
+    text {
+      fill: black;
+      font: 12px sans-serif;
+    }
+
+    line {
+      stroke-width: 0.5px;
+      stroke: #e0e0e0;
+    }
+
+    .axis path {
+      display: none;
+    }
+
+    path.price {
+      stroke: #e51133;
+      fill: none;
+    }*/
+  </style>
+
+
+</head>
+<body>
+
+  <label>duration (ms)</label><input id="in_duration" value="2000" />
+  <label># of frames</label><input id="in_frames" value="20" />
+  <input type="checkbox" id="in_doDownload" style="margin-left:20px; margin-right:0px; width:13px;" /><label style="padding-left:3px;">download finished gif</label>
+
+  
+  <hr style="clear:both;" />
+
+  <div class="wrapper">
+    <div class="holder">
+      <strong>data</strong>
+      <textarea id="dataEdit"></textarea>
+    </div>
+    <div class="holderSmall">
+      <button id="btn_buildChart">build chart -> </button>
+    </div>
+    <div class="holder">
+      <strong>chart</strong>
+      <div class="svg" id="svgHolder"></div>
+    </div>
+    <div class="holderSmall">
+      <button id="btn_buildGif">build gif -> </button>
+    </div>
+    <div class="holder">
+      <strong>animated gif</strong>
+      <div class="gif"></div>
+    </div>
+  </div>
+
+  <hr style="clear:both;" />
+
+  <div id="imgHolder"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
